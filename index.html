@@ -10,20 +10,25 @@
     }
 
     body {
-  margin: 0;
-  font-family: Cambria, Georgia, serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
+      margin: 0;
+      font-family: Cambria, Georgia, serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
     header {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-image: url('banner.png');
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 5rem 1rem 2rem;
+      height: 260px;
       text-align: center;
-      position: relative;
+      padding: 1rem;
+      overflow: hidden;
     }
 
     header::after {
@@ -37,7 +42,30 @@
 
     header * {
       position: relative;
+      z-index: 2;
+    }
+
+    .banner-img {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      max-height: 260px;
+      opacity: 0.85;
+      pointer-events: none;
       z-index: 1;
+    }
+
+    .banner-img.left {
+      left: 0;
+    }
+
+    .banner-img.right {
+      right: 0;
+    }
+
+    .banner-content {
+      z-index: 2;
+      text-align: center;
     }
 
     .avatar {
@@ -107,97 +135,86 @@
         width: 100px;
         height: 100px;
       }
+
+      .banner-img {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="WechatIMG826.jpg" alt="Your Photo" class="avatar">
-    <h1 style="color: white;">Zhiwei Yang</h1>
-    <p>Graduate Student | Philosophy of Mind, Philosophy of Perception</p>
+    <img src="left.png" alt="Left Decoration" class="banner-img left" />
+    <div class="banner-content">
+      <img src="WechatIMG826.jpg" alt="Your Photo" class="avatar">
+      <h1 style="color: white;">Zhiwei Yang</h1>
+      <p>Graduate Student | Philosophy of Mind, Philosophy of Perception</p>
+    </div>
+    <img src="right.png" alt="Right Decoration" class="banner-img right" />
   </header>
 
   <div style="text-align: center; margin-top: 2rem; margin-bottom: 0.2rem; font-weight: bold; font-size: 1.05rem; color: #222;">
-  Forthcoming Talk
-</div>
+    Forthcoming Talk
+  </div>
 
-<div style="text-align: center; background-color: #f5f5f5; color: #444; font-style: italic; font-size: 1rem; padding: 0.6rem 1rem; margin: 0.4rem auto 1rem; border-left: 4px solid #888; max-width: 700px;">
-  <span style="color: #666;">Jan. 2026, Baltimore:</span> “New Object Theory and Illusion”, Eastern APA, Colloquium
-</div>
-
-
+  <div style="text-align: center; background-color: #f5f5f5; color: #444; font-style: italic; font-size: 1rem; padding: 0.6rem 1rem; margin: 0.4rem auto 1rem; border-left: 4px solid #888; max-width: 700px;">
+    <span style="color: #666;">Jan. 2026, Baltimore:</span> “New Object Theory and Illusion”, Eastern APA, Colloquium
+  </div>
 
   <div class="container">
     <section>
       <h2>About Me</h2>
       <p>
         Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy at Peking University and currently a visiting student at MIT. I mostly write about philosophy of mind and philosophy of perception.
-        
+
         I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of the band Twenty One Pilots and Hong Kong singer Sam Hui.
       </p>
     </section>
 
-
-    <!-- 
     <section>
-      <h2>Lecture Snapshot</h2>
-      <img src="lecture-photo.jpg" alt="Lecture Photo" class="lecture-img" />
-      <p class="lecture-caption">
-        From my recent lecture on AI and the nature of perception.
-      </p>
+      <h2>Publications</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 1rem;">
+          <span style="color: #555;">2025.</span>
+          <a href="https://philpapers.org/go.pl?aid=YANIRP" style="font-weight: bold; color: #365C7D; text-decoration: none;">
+            “Is Rich Phenomenology Fragmented?”
+          </a>
+          <span style="color: #555;"> Synthese.</span>
+          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" style="color: #365C7D; text-decoration: none;">
+            [Springer]
+          </a>
+        </li>
+      </ul>
     </section>
-    -->
-
 
     <section>
-  <h2>Publications</h2>
-  <ul style="list-style: none; padding-left: 0;">
-    <li style="margin-bottom: 1rem;">
-      <span style="color: #555;">2025.</span>
-      <a href="https://philpapers.org/go.pl?aid=YANIRP" style="font-weight: bold; color: #365C7D; text-decoration: none;">
-        “Is Rich Phenomenology Fragmented?”
-      </a>
-      <span style="color: #555;"> Synthese.</span>
-      <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" style="color: #365C7D; text-decoration: none;">
-        [Springer]
-      </a>
-    </li>
-  </ul>
-</section>
+      <h2>Talks</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 1.2rem;">
+          <strong>“New Object Theory and Illusion”</strong><br/>
+          <span style="color: #555;">• Eastern APA, Colloquium, <em>Baltimore, USA</em>, <em>Forthcoming</em> (January 2026)</span>
+        </li>
 
+        <li style="margin-bottom: 1.2rem;">
+          <strong>“Do Semantic Properties Involve the Future?”</strong><br/>
+          <span style="color: #555;">• Pacific APA, Colloquium, <em>San Francisco, USA</em>, <em>April 2025</em></span><br/>
+          <span style="color: #555;">• Eastern APA, W.I.P., <em>New York, USA</em>, <em>January 2025</em></span>
+        </li>
 
+        <li style="margin-bottom: 1.2rem;">
+          <strong>“Is Rich Phenomenology Fragmented?”</strong><br/>
+          <span style="color: #555;">• Central APA, Colloquium, <em>Online</em>, <em>February 2025</em></span>
+        </li>
 
-    <section>
-  <h2>Talks</h2>
-
-  <ul style="list-style: none; padding-left: 0;">
-    
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“New Object Theory and Illusion”</strong><br/>
-      <span style="color: #555;">• Eastern APA, Colloquium, <em>Baltimore, USA</em>, <em>Forthcoming</em> (January 2026)</span>
-    </li>
-
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“Do Semantic Properties Involve the Future?”</strong><br/>
-      <span style="color: #555;">• Pacific APA, Colloquium, <em>San Francisco, USA</em>, <em>April 2025</em></span><br/>
-      <span style="color: #555;">• Eastern APA, W.I.P., <em>New York, USA</em>, <em>January 2025</em></span>
-    </li>
-
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“Is Rich Phenomenology Fragmented?”</strong><br/>
-      <span style="color: #555;">• Central APA, Colloquium, <em>Online</em>, <em>February 2025</em></span>
-    </li>
-
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“Methodological Challenges in Consciousness Concept Research”</strong><br/>
-      <span style="color: #555;">• Annual Conference of the Australasian Association of Philosophy, Colloquium, <em>Perth, Australia</em>, <em>July 2024</em></span><br/>
-      <span style="color: #555;">• Workshop for Young Scholars in Science and Philosophy, Colloquium, <em>Beijing, China</em>, <em>April 2024</em></span><br/>
-      <span style="color: #555;">• PKU Philosophy R&amp;W, <em>Beijing, China</em>, <em>March 2024</em></span>
-    </li>
-
-  </ul>
-</section>
-
+        <li style="margin-bottom: 1.2rem;">
+          <strong>“Methodological Challenges in Consciousness Concept Research”</strong><br/>
+          <span style="color: #555;">• Annual Conference of the Australasian Association of Philosophy, Colloquium, <em>Perth, Australia</em>, <em>July 2024</em></span><br/>
+          <span style="color: #555;">• Workshop for Young Scholars in Science and Philosophy, Colloquium, <em>Beijing, China</em>, <em>April 2024</em></span><br/>
+          <span style="color: #555;">• PKU Philosophy R&amp;W, <em>Beijing, China</em>, <em>March 2024</em></span>
+        </li>
+      </ul>
+    </section>
 
     <section>
       <h2>Contact</h2>
@@ -208,5 +225,6 @@
   <footer>
     &copy; 2025 Your Name. All rights reserved.
   </footer>
+
 </body>
 </html>
