@@ -1,89 +1,107 @@
-% ============================================================
-% GitHub Profile LaTeX Homepage
-% Compile with XeLaTeX  (xelatex github_homepage.tex)
-% ============================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-\documentclass[10pt,a4paper]{article}
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      width: 100%;
+    }
 
-% ---------- Page geometry & layout ----------
-\usepackage{geometry}
-\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+    header h1 {
+      margin: 0.5rem 0;
+    }
 
-% ---------- Fonts & Languages ----------
-\usepackage{fontspec}
-\usepackage{xeCJK}
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
-\setCJKmainfont{SimSun}
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-top: 1rem;
+    }
 
-% ---------- Colors & Hyperlinks ----------
-\usepackage[dvipsnames]{xcolor}
-\usepackage{hyperref}
-\hypersetup{
-  colorlinks=true,
-  linkcolor=MidnightBlue,
-  urlcolor=MidnightBlue
-}
+    .container {
+      max-width: 800px;
+      padding: 2rem;
+    }
 
-% ---------- Icons ----------
-\usepackage{fontawesome5}
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
 
-% ---------- Lists ----------
-\usepackage{enumitem}
-\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
-\setlist[enumerate]{noitemsep, topsep=0pt, leftmargin=*}
+    ul {
+      padding-left: 1.5rem;
+    }
 
-% ---------- Custom Commands ----------
-\newcommand{\name}[1]{{\Huge\bfseries #1}}
-\newcommand{\tagline}[1]{{\large \color{Gray} #1}}
-\newcommand{\contact}[3]{#1\hspace{0.5em}\href{#2}{#3}\\}
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
 
-% ---------- Document starts ----------
-\begin{document}
-\pagenumbering{gobble}
+    a:hover {
+      text-decoration: underline;
+    }
 
-% ------ Header ------
-\begin{center}
-  \name{Your Name}\\[4pt]
-  \tagline{Researcher in Philosophy of Mind \& AI}\\[8pt]
-  \contact{\faEnvelope[regular]}{mailto:email@example.com}{email@example.com}
-  \contact{\faGithub}{https://github.com/username}{github.com/username}
-  \contact{\faGlobe}{https://yourdomain.com}{yourdomain.com}
-\end{center}
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="your-photo.jpg" alt="Your Avatar" class="avatar" />
+    <h1>Your Name</h1>
+    <p>Philosophy Student | Specializing in Philosophy of Mind, Epistemology, Language & AI</p>
+  </header>
 
-% ------ About ------
-\section*{简介}
-一句话概括你的研究兴趣和个人定位。简洁有力，控制在 2--3 行以内。
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I’m currently studying philosophy with a focus on analytic traditions in mind, language, and AI. 
+        This site collects my projects, notes, and resources.
+      </p>
+    </section>
 
-% ------ Research Interests ------
-\section*{研究兴趣}
-\begin{itemize}
-  \item 分析哲学（心灵哲学、知识论、语言哲学）
-  \item 人工智能哲学、认知科学
-\end{itemize}
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="https://github.com/your-username/project1">Project 1 - [Name]</a></li>
+        <li><a href="https://github.com/your-username/project2">Project 2 - [Name]</a></li>
+      </ul>
+    </section>
 
-% ------ Education ------
-\section*{教育背景}
-\begin{itemize}
-  \item 2022--至今 \quad **某大学** \quad 哲学博士（在读）
-  \item 2018--2022 \quad **某大学** \quad 哲学学士
-\end{itemize}
+    <section>
+      <h2>Contact</h2>
+      <p>Email: yourname@example.com</p>
+      <p>GitHub: <a href="https://github.com/your-username">your-username</a></p>
+      <p>Twitter: <a href="https://twitter.com/yourhandle">@yourhandle</a></p>
+    </section>
+  </div>
 
-% ------ Publications ------
-\section*{出版物与会议论文}
-\begin{enumerate}[label={[P\arabic*]}]
-  \item Author, A. (2024). *Title of the journal article.* \textit{Journal Name}, 12(3), 34--56.
-  \item Author, A., \& Coauthor, B. (2023). *Title of conference paper.* In \textit{Proceedings of XYZ Conference} (pp.~78--89).
-\end{enumerate}
-
-% ------ Talks ------
-\section*{学术报告与口头报告}
-\begin{enumerate}[label={[C\arabic*]}]
-  \item 2025.05.21 \quad “Talk Title.” Invited talk at \textit{ABC Workshop on Philosophy of AI}, University~X.
-  \item 2024.11.12 \quad “Another Talk Title.” Contributed talk at \textit{International Conference on Mind}, City~Y.
-\end{enumerate}
-
-\end{document}
-% ---------------- End of File ----------------
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+</body>
+</html>
