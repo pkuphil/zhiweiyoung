@@ -1,11 +1,89 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>我的个人网站</title>
-</head>
-<body>
-  <h1>欢迎来到我的网站！</h1>
-  <p>这是我使用 GitHub Pages 搭建的第一个网页。</p>
-</body>
-</html>
+% ============================================================
+% GitHub Profile LaTeX Homepage
+% Compile with XeLaTeX  (xelatex github_homepage.tex)
+% ============================================================
+
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Page geometry & layout ----------
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=1.5cm,bottom=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- Fonts & Languages ----------
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setCJKmainfont{SimSun}
+
+% ---------- Colors & Hyperlinks ----------
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MidnightBlue,
+  urlcolor=MidnightBlue
+}
+
+% ---------- Icons ----------
+\usepackage{fontawesome5}
+
+% ---------- Lists ----------
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+\setlist[enumerate]{noitemsep, topsep=0pt, leftmargin=*}
+
+% ---------- Custom Commands ----------
+\newcommand{\name}[1]{{\Huge\bfseries #1}}
+\newcommand{\tagline}[1]{{\large \color{Gray} #1}}
+\newcommand{\contact}[3]{#1\hspace{0.5em}\href{#2}{#3}\\}
+
+% ---------- Document starts ----------
+\begin{document}
+\pagenumbering{gobble}
+
+% ------ Header ------
+\begin{center}
+  \name{Your Name}\\[4pt]
+  \tagline{Researcher in Philosophy of Mind \& AI}\\[8pt]
+  \contact{\faEnvelope[regular]}{mailto:email@example.com}{email@example.com}
+  \contact{\faGithub}{https://github.com/username}{github.com/username}
+  \contact{\faGlobe}{https://yourdomain.com}{yourdomain.com}
+\end{center}
+
+% ------ About ------
+\section*{简介}
+一句话概括你的研究兴趣和个人定位。简洁有力，控制在 2--3 行以内。
+
+% ------ Research Interests ------
+\section*{研究兴趣}
+\begin{itemize}
+  \item 分析哲学（心灵哲学、知识论、语言哲学）
+  \item 人工智能哲学、认知科学
+\end{itemize}
+
+% ------ Education ------
+\section*{教育背景}
+\begin{itemize}
+  \item 2022--至今 \quad **某大学** \quad 哲学博士（在读）
+  \item 2018--2022 \quad **某大学** \quad 哲学学士
+\end{itemize}
+
+% ------ Publications ------
+\section*{出版物与会议论文}
+\begin{enumerate}[label={[P\arabic*]}]
+  \item Author, A. (2024). *Title of the journal article.* \textit{Journal Name}, 12(3), 34--56.
+  \item Author, A., \& Coauthor, B. (2023). *Title of conference paper.* In \textit{Proceedings of XYZ Conference} (pp.~78--89).
+\end{enumerate}
+
+% ------ Talks ------
+\section*{学术报告与口头报告}
+\begin{enumerate}[label={[C\arabic*]}]
+  \item 2025.05.21 \quad “Talk Title.” Invited talk at \textit{ABC Workshop on Philosophy of AI}, University~X.
+  \item 2024.11.12 \quad “Another Talk Title.” Contributed talk at \textit{International Conference on Mind}, City~Y.
+\end{enumerate}
+
+\end{document}
+% ---------------- End of File ----------------
