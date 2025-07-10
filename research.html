@@ -39,7 +39,6 @@
       font-size: 1.8rem;
       font-weight: 500;
       letter-spacing: 0.5px;
-      font-family: Georgia, serif;
     }
 
     .back-home {
@@ -90,104 +89,139 @@
       flex: 1;
     }
 
-    .block {
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .mini-block {
+      aspect-ratio: 1 / 1;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      cursor: pointer;
       position: relative;
       overflow: hidden;
-      background-color: #ffffff;
-      padding: 2.5rem 2rem;
-      margin-bottom: 3rem;
-      border-radius: 14px;
-      border: 1px solid #e2e2e2;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       background-size: cover;
       background-position: center;
-      z-index: 0;
+      transition: transform 0.3s;
     }
 
-    .block:hover {
+    .mini-block:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
     }
 
-    .block::before {
+    .mini-block::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(to bottom right, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+      background: rgba(255,255,255,0.8);
       z-index: 1;
-      backdrop-filter: blur(1px);
     }
 
-    .block > * {
+    .mini-block > * {
       position: relative;
       z-index: 2;
     }
 
-    .block h3 {
-      font-size: 1.35rem;
-      font-weight: bold;
-      color: #1e1e1e;
-      margin-bottom: 0.8rem;
-      font-family: Georgia, serif;
+    .mini-block h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: #1f1f1f;
     }
 
-    .block p {
-      font-size: 1.03rem;
-      color: #3e3e3e;
-      line-height: 1.8;
-      margin-bottom: 0;
-    }
-
-    .block a {
-      display: inline-block;
-      margin-top: 0.8rem;
+    .mini-block p {
       font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+      max-height: 4.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .bg-phenomenology { background-image: url('phenomenology.jpg'); }
+    .bg-semantics { background-image: url('semantics.jpg'); }
+    .bg-illusion { background-image: url('illusion.jpg'); }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(2px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      max-width: 700px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .modal-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .modal-content a {
       color: #2f5a85;
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-bottom 0.2s ease;
     }
 
-    .block a:hover {
+    .modal-content a:hover {
       border-bottom: 1px solid #2f5a85;
     }
 
-    .bg-phenomenology {
-      background-image: url('phenomenology.jpg');
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.5rem;
+      color: #777;
+      cursor: pointer;
     }
 
-    .bg-semantics {
-      background-image: url('semantics.jpg');
-    }
-
-    .bg-illusion {
-      background-image: url('illusion.jpg');
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
       .container {
         flex-direction: column;
-        padding: 2rem 1rem;
       }
-
       .sidebar {
         width: 100%;
         border-right: none;
         padding-right: 0;
-        margin-bottom: 2rem;
       }
-
-      .block {
-        padding: 2rem 1.5rem;
+      .card-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
-
 <body>
-
   <header class="banner">
     <div class="banner-text">Zhiwei Yang | Research</div>
   </header>
@@ -197,37 +231,66 @@
   </div>
 
   <div class="container">
-
     <aside class="sidebar">
       <img src="IMG_7525.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
     </aside>
 
     <main class="main">
-
-      <div class="block bg-phenomenology">
-        <h3>“Is Rich Phenomenology Fragmented?”</h3>
-        <p>
-          Published in <em>Synthese</em>, 2025. Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions. Proponents of the Fragment View tend to assert that their view uniquely explains the data they rely on. The uniqueness of the Fragment View is challenged here. Newly introduced evidence suggests that the data supporting the Fragment View may also be compatible with the Rich View. Given the theoretical advantages of the Rich View in other respects, there are reasons to consider it the superior one.
-          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
-        </p>
+      <div class="card-grid">
+        <div class="mini-block bg-phenomenology" onclick="openModal('modal1')">
+          <h3>“Is Rich Phenomenology Fragmented?”</h3>
+          <p>Some philosophers argue that the content of iconic memory is conscious...</p>
+        </div>
+        <div class="mini-block bg-semantics" onclick="openModal('modal2')">
+          <h3>“Do Semantic Properties Involve the Future?”</h3>
+          <p>This paper lies at the intersection of philosophy of language...</p>
+        </div>
+        <div class="mini-block bg-illusion" onclick="openModal('modal3')">
+          <h3>“New Object Theory and Illusion”</h3>
+          <p>Defends a novel account of perceptual objecthood that ...</p>
+        </div>
       </div>
-
-      <div class="block bg-semantics">
-        <h3>“Do Semantic Properties Involve the Future?”</h3>
-        <p>
-          This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning,” and then to use that connection to argue against Temporal Externalism (a view that semantic reference can be determined by future facts). In the final part, I argue that TE can only be made plausible by presupposing a kind of meta-belief—which, however, undercuts the very motivation behind externalism.
-        </p>
-      </div>
-
-      <div class="block bg-illusion">
-        <h3>“New Object Theory and Illusion”</h3>
-        <p>
-          Defends a novel account of perceptual objecthood that ...
-        </p>
-      </div>
-
     </main>
   </div>
 
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>“Is Rich Phenomenology Fragmented?”</h3>
+      <p>Published in <em>Synthese</em>, 2025... <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a></p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>“Do Semantic Properties Involve the Future?”</h3>
+      <p>This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind...</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h3>“New Object Theory and Illusion”</h3>
+      <p>Defends a novel account of perceptual objecthood that integrates recent debates on the role of attention and object-based representation...</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
