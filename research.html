@@ -7,184 +7,145 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: Georgia, serif;
-      color: #1e1e1e;
-      background-color: #fefefe;
-      line-height: 1.6;
+      background-color: #fafafa;
+      color: #1f1f1f;
+      line-height: 1.7;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .block {
       display: flex;
       flex-direction: row;
-      padding: 4rem 1.5rem;
-      gap: 3rem;
-    }
-
-    .left-nav {
-      width: 30%;
-      position: sticky;
-      top: 4rem;
-      align-self: flex-start;
-      border-right: 1px solid #ddd;
-      padding-right: 2rem;
-    }
-
-    .left-nav h2 {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      color: #333;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.3rem;
-    }
-
-    .nav-item {
-      margin-bottom: 1rem;
-    }
-
-    .nav-item a {
-      color: #444;
-      text-decoration: none;
-      font-size: 0.97rem;
-    }
-
-    .nav-item a:hover {
-      color: #1e1e1e;
-      text-decoration: underline;
-    }
-
-    .content {
-      flex: 1;
-      padding-left: 1rem;
-    }
-
-    .avatar {
-      float: right;
-      margin-left: 2rem;
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .section {
+      gap: 2rem;
+      background-color: #fff;
+      padding: 1.5rem;
       margin-bottom: 3rem;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .section h3 {
-      font-size: 1.3rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
+    .block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .image-square {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .text-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
       color: #222;
     }
 
-    .pub {
-      margin-bottom: 2rem;
+    .text-content p {
+      font-size: 1rem;
+      color: #444;
     }
 
-    .pub-title {
-      font-weight: bold;
-      font-size: 1.05rem;
-    }
-
-    .pub-meta {
-      color: #777;
-      font-size: 0.95rem;
-      margin-top: 0.2rem;
-    }
-
-    .pub-desc {
-      margin-top: 0.5rem;
-      color: #333;
-    }
-
-    a.link {
+    .text-content a {
       color: #365C7D;
       text-decoration: none;
     }
 
-    a.link:hover {
+    .text-content a:hover {
       text-decoration: underline;
     }
 
-    footer {
+    .lecture-photo {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 0.5rem;
+    }
+
+    .lecture-caption {
+      font-style: italic;
+      color: #666;
       text-align: center;
-      color: #999;
-      font-size: 0.9rem;
-      padding: 3rem 1rem;
-      border-top: 1px solid #ddd;
-      margin-top: 4rem;
+      margin-bottom: 3rem;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 800px) {
-      .container {
+      .block {
         flex-direction: column;
       }
-      .left-nav {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 2rem;
+
+      .block:nth-child(even) {
+        flex-direction: column;
       }
-      .avatar {
-        float: none;
-        display: block;
-        margin: 2rem auto;
+
+      .image-square {
+        width: 100%;
+        height: 200px;
       }
     }
   </style>
 </head>
+
 <body>
-
   <div class="container">
-    <nav class="left-nav">
-      <h2>Contents</h2>
-      <div class="nav-item"><a href="#pubs">Published</a></div>
-      <div class="nav-item"><a href="#wip">Work in Progress</a></div>
-    </nav>
 
-    <main class="content">
-      <img src="WechatIMG826.jpg" alt="Zhiwei Yang" class="avatar" />
-
-      <div class="section" id="pubs">
-        <h3>Published</h3>
-        <div class="pub">
-          <div class="pub-title">“Is Rich Phenomenology Fragmented?”</div>
-          <div class="pub-meta">Synthese, 2025. <a class="link" href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Springer]</a></div>
-          <div class="pub-desc">
-            This article argues that the richness of phenomenal experience does not imply unity. I offer a modular account of consciousness based on disunity across sensory modalities.
-          </div>
-        </div>
+    <!-- 论文块 1 -->
+    <div class="block">
+      <img src="phenomenology.jpg" alt="Phenomenology visual" class="image-square" />
+      <div class="text-content">
+        <h3>“Is Rich Phenomenology Fragmented?”</h3>
+        <p>
+          Published in <em>Synthese</em>, 2025. This paper challenges the assumption that richness of experience implies unity. I propose a modular account of consciousness.  
+          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
+        </p>
       </div>
+    </div>
 
-      <div class="section" id="wip">
-        <h3>Work in Progress</h3>
+    <!-- 演讲照片 1 -->
+    <img src="lecture1.jpg" alt="Lecture in Beijing" class="lecture-photo" />
+    <div class="lecture-caption">From my AI & Consciousness talk, Beijing, April 2024.</div>
 
-        <div class="pub">
-          <div class="pub-title">“New Object Theory and Illusion”</div>
-          <div class="pub-meta">To be presented at Eastern APA, 2026</div>
-          <div class="pub-desc">
-            Proposes a theory of perceptual objecthood that accounts for visual illusions without positing representational error. Influenced by relationalist views of perception.
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="pub-title">“Do Semantic Properties Involve the Future?”</div>
-          <div class="pub-meta">Pacific APA, 2025 (forthcoming)</div>
-          <div class="pub-desc">
-            Investigates whether the meaning of linguistic expressions can depend on future events. This has implications for semantic externalism and the metaphysics of reference.
-          </div>
-        </div>
+    <!-- 论文块 2 -->
+    <div class="block">
+      <img src="illusion.jpg" alt="Visual Illusion" class="image-square" />
+      <div class="text-content">
+        <h3>“New Object Theory and Illusion”</h3>
+        <p>
+          Defends a theory of perceptual objecthood that accommodates illusions without invoking representational error. Based on relational views of perception.
+        </p>
       </div>
-    </main>
+    </div>
+
+    <!-- 演讲照片 2 -->
+    <img src="lecture2.jpg" alt="Eastern APA Talk" class="lecture-photo" />
+    <div class="lecture-caption">Eastern APA, Colloquium Presentation, Baltimore (Forthcoming).</div>
+
+    <!-- 论文块 3 -->
+    <div class="block">
+      <img src="semantics.jpg" alt="Semantics & Time" class="image-square" />
+      <div class="text-content">
+        <h3>“Do Semantic Properties Involve the Future?”</h3>
+        <p>
+          Investigates whether linguistic meaning depends on future-directed conditions. Implications for semantic anti-realism and temporal metaphysics.
+        </p>
+      </div>
+    </div>
+
   </div>
-
-  <footer>
-    &copy; 2025 Zhiwei Yang. All rights reserved.
-  </footer>
 </body>
 </html>
