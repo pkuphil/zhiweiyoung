@@ -3,279 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zhiwei Young</title>
+  <title>Research | Zhiwei Yang</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background-color: #fafafa;
+      color: #1f1f1f;
+      line-height: 1.7;
     }
 
-    body {
-  margin: 0;
-  font-family: Cambria, Georgia, serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-    header {
+    .banner {
+      height: 200px;
       background-image: url('IMG.jpg');
       background-size: cover;
       background-position: center;
-      color: white;
-      padding: 5rem 1rem 2rem;
-      text-align: center;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    header::after {
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .banner-text {
+      position: relative;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .back-home {
+      position: fixed;
+      top: 1rem;
+      right: 1.5rem;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-home a {
+      font-size: 0.95rem;
+      color: #365C7D;
+      text-decoration: none;
+    }
+
+    .back-home a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .mini-block {
+      width: calc(50% - 1rem);
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s;
+    }
+
+    .mini-block:hover {
+      transform: translateY(-4px);
+    }
+
+    .mini-block::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    header * {
-      position: relative;
+      background: rgba(255,255,255,0.8);
       z-index: 1;
     }
 
-    .avatar {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 0 3px rgba(255,255,255,0.8);
+    .mini-block > * {
+      position: relative;
+      z-index: 2;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem 1rem;
+    .mini-block h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: #1f1f1f;
     }
 
-    h1, h2 {
-      color: #111;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
-
-    a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .lecture-img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 10px;
-      display: block;
-      margin: 1rem auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .lecture-caption {
-      text-align: center;
-      color: #555;
+    .mini-block p {
       font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+      max-height: 4.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
-    footer {
-      text-align: center;
-      color: #999;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
+    .bg-phenomenology {
+      background-image: url('phenomenology.jpg');
     }
 
-    @media (max-width: 600px) {
-      .avatar {
-        width: 100px;
-        height: 100px;
+    .bg-semantics {
+      background-image: url('semantics.jpg');
+    }
+
+    .bg-illusion {
+      background-image: url('illusion.jpg');
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(2px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      max-width: 700px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .modal-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .modal-content a {
+      color: #2f5a85;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .modal-content a:hover {
+      border-bottom: 1px solid #2f5a85;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.5rem;
+      color: #777;
+      cursor: pointer;
+    }
+
+    @media (max-width: 800px) {
+      .mini-block {
+        width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="WechatIMG826.jpg" alt="Your Photo" class="avatar">
-    <h1 style="color: white;">Zhiwei Yang</h1>
-    <p>Graduate Student | Philosophy of Mind | <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: white;">Here is my APA interview</a>
-    </p>
 
-
-<!-- 更大气、圆角、居中的导航按钮 
-  <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-    <a href="index.html" style="
-      padding: 0.6rem 1.4rem;
-      border: 1.5px solid rgba(255, 255, 255, 0.8);
-      border-radius: 30px;
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 1.05rem;
-      transition: background-color 0.2s ease;
-    ">Home</a>
-    
-    <a href="research.html" style="
-      padding: 0.6rem 1.4rem;
-      border: 1.5px solid rgba(255, 255, 255, 0.8);
-      border-radius: 30px;
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 1.05rem;
-      transition: background-color 0.2s ease;
-    ">Research</a>
-
-    <a href="contact.html" style="
-      padding: 0.6rem 1.4rem;
-      border: 1.5px solid rgba(255, 255, 255, 0.8);
-      border-radius: 30px;
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 1.05rem;
-      transition: background-color 0.2s ease;
-    ">Contact</a>
-  </div>
-    --> 
-
+  <header class="banner">
+    <div class="banner-text">Zhiwei Yang | Research</div>
   </header>
-    
 
-  <div style="text-align: center; margin-top: 2rem; margin-bottom: 0.2rem; font-weight: bold; font-size: 1.05rem; color: #222;">
-  Forthcoming Talk
-</div>
+  <div class="back-home">
+    <a href="index.html">← Home</a>
+  </div>
 
-<div style="text-align: center; background-color: #f5f5f5; color: #444; font-style: italic; font-size: 1rem; padding: 0.6rem 1rem; margin: 0.4rem auto 1rem; border-left: 4px solid #888; max-width: 700px;">
-  <span style="color: #666;">Jan. 2026, Baltimore:</span> “New Object Theory and Illusion”, Eastern APA, Colloquium
-</div>
+  <div class="container">
+    <div class="card-grid">
 
-<div class="container">
-    <section>
-      <h2>Who I Am</h2>
+      <div class="mini-block bg-phenomenology" onclick="openModal('modal1')">
+        <h3>“Is Rich Phenomenology Fragmented?”</h3>
+        <p>Some philosophers argue that the content of iconic memory is conscious...</p>
+      </div>
+
+      <div class="mini-block bg-semantics" onclick="openModal('modal2')">
+        <h3>“Do Semantic Properties Involve the Future?”</h3>
+        <p>This paper lies at the intersection of philosophy of language...</p>
+      </div>
+
+      <div class="mini-block bg-illusion" onclick="openModal('modal3')">
+        <h3>“New Object Theory and Illusion”</h3>
+        <p>Defends a novel account of perceptual objecthood that ...</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>“Is Rich Phenomenology Fragmented?”</h3>
       <p>
-      Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy at Peking University and currently a visiting student at MIT. I mostly write about philosophy of mind and philosophy of perception.<br><br>
-      I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies.<br>
-      I'm also a fan of the band 
-      <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2c2f36;">Twenty One Pilots</a>
-      and Hong Kong singer 
-      <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2c2f36;">
-  Sam Hui
-</a>.
-    </p>
-    </section>
-
-
-
-    <!-- 
-    <section>
-      <h2>Lecture Snapshot</h2>
-      <img src="lecture-photo.jpg" alt="Lecture Photo" class="lecture-img" />
-      <p class="lecture-caption">
-        From my recent lecture on AI and the nature of perception.
+        Published in <em>Synthese</em>, 2025. Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions. Proponents of the Fragment View tend to assert that their view uniquely explains the data they rely on. The uniqueness of the Fragment View is challenged here. Newly introduced evidence suggests that the data supporting the Fragment View may also be compatible with the Rich View. Given the theoretical advantages of the Rich View in other respects, there are reasons to consider it the superior one.
+        <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
       </p>
-    </section>
-    -->
-
-
-   <section>
-  <h2>Publications</h2>
-  <div style="text-align: right; margin-top: -1.2rem; margin-bottom: 1.5rem;">
-    <a href="research.html" style="
-      font-size: 0.92rem;
-      color: #444;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 2px;
-      transition: all 0.2s ease;
-    " onmouseover="this.style.color='#222'; this.style.borderBottomColor='#888'"
-       onmouseout="this.style.color='#444'; this.style.borderBottomColor='#ccc'">
-      View Full Research →
-    </a>
-  </div>
-  <ul style="list-style: none; padding-left: 0;">
-    <li style="margin-bottom: 1rem;">
-      <span style="color: #555;">2025.</span>
-      <a href="https://philpapers.org/go.pl?aid=YANIRP" style="font-weight: bold; color: #365C7D; text-decoration: none;">
-        “Is Rich Phenomenology Fragmented?”
-      </a>
-      <span style="color: #555;"> Synthese.</span>
-      <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" style="color: #365C7D; text-decoration: none;">
-        [Springer]
-      </a>
-    </li>
-  </ul>
-</section>
-
-    <!--
-    <section>
-  <h2>Work in Progress</h2>
-  <ul style="list-style: none; padding-left: 0;">
-    <li style="margin-bottom: 1rem;">“Do Semantic Properties Involve the Future?”</li>
-    <li style="margin-bottom: 1rem;">“New Object Theory and Illusion”</li>
-  </ul>
-</section>
-  -->
-
-
-    <section>
-  <h2>Talks</h2>
-
-  <ul style="list-style: none; padding-left: 0;">
-    
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“New Object Theory and Illusion”</strong><br/>
-      <span style="color: #555;">• Eastern APA, Colloquium, <em>Baltimore, USA</em>, <em>Forthcoming</em> (January 2026)</span>
-    </li>
-
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“Do Semantic Properties Involve the Future?”</strong><br/>
-      <span style="color: #555;">• Pacific APA, Colloquium, <em>San Francisco, USA</em>, <em>April 2025</em></span><br/>
-      <span style="color: #555;">• Eastern APA, W.I.P., <em>New York, USA</em>, <em>January 2025</em></span>
-    </li>
-
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“Is Rich Phenomenology Fragmented?”</strong><br/>
-      <span style="color: #555;">• Central APA, Colloquium, <em>Online</em>, <em>February 2025</em></span>
-    </li>
-
-    <li style="margin-bottom: 1.2rem;">
-      <strong>“Methodological Challenges in Consciousness Concept Research”</strong><br/>
-      <span style="color: #555;">• Annual Conference of the Australasian Association of Philosophy, Colloquium, <em>Perth, Australia</em>, <em>July 2024</em></span><br/>
-      <span style="color: #555;">• Workshop for Young Scholars in Science and Philosophy, Colloquium, <em>Beijing, China</em>, <em>April 2024</em></span><br/>
-      <span style="color: #555;">• PKU Philosophy R&amp;W, <em>Beijing, China</em>, <em>March 2024</em></span>
-    </li>
-
-  </ul>
-</section>
-
-
-    <section>
-      <h2>Contact</h2>
-      <p>Email: allenminesky AT gmail DOT com</p>
-    </section>
+    </div>
   </div>
 
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>“Do Semantic Properties Involve the Future?”</h3>
+      <p>
+        This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning,” and then to use that connection to argue against Temporal Externalism (a view that semantic reference can be determined by future facts). In the final part, I argue that TE can only be made plausible by presupposing a kind of meta-belief—which, however, undercuts the very motivation behind externalism.
+      </p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h3>“New Object Theory and Illusion”</h3>
+      <p>
+        Defends a novel account of perceptual objecthood that integrates recent debates on the role of attention and object-based representation. The paper argues that illusions are not merely misrepresentations but reveal structural constraints in perceptual object formation.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    // 可选：点击空白处关闭弹窗
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
