@@ -13,6 +13,37 @@
       line-height: 1.7;
     }
 
+    /* 顶部横幅 */
+    .banner {
+      height: 200px;
+      background-image: url('IMG.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .banner-text {
+      position: relative;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      font-family: Georgia, serif;
+    }
+
+    /* 主体布局 */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -22,7 +53,7 @@
       gap: 3rem;
     }
 
-    /* 左边个人照框 */
+    /* 左侧照片栏 */
     .sidebar {
       width: 28%;
       border-right: 1px solid #ddd;
@@ -37,7 +68,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* 右边内容区域 */
+    /* 右侧研究内容 */
     .main {
       flex: 1;
     }
@@ -113,7 +144,14 @@
 </head>
 
 <body>
+
+  <!-- 顶部 banner -->
+  <header class="banner">
+    <div class="banner-text">Zhiwei Yang | Research</div>
+  </header>
+
   <div class="container">
+
     <!-- 左侧照片 -->
     <aside class="sidebar">
       <img src="WechatIMG826.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
@@ -158,5 +196,6 @@
 
     </main>
   </div>
+
 </body>
 </html>
