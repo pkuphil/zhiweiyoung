@@ -60,100 +60,81 @@
 
     /* 主体布局 */
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: row;
       padding: 4rem 1.5rem;
-      gap: 3rem;
     }
 
-    /* 左侧照片栏 */
-    .sidebar {
-      width: 28%;
-      border-right: 1px solid #ddd;
-      padding-right: 1.5rem;
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    /* 右侧研究内容 */
-    .main {
-      flex: 1;
-    }
-
+    /* 每个研究模块 */
     .block {
-      display: flex;
-      align-items: flex-start; /* 核心：顶部对齐 */
-      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
       background-color: #fff;
-      padding: 1.5rem;
-      margin-bottom: 2.5rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
       border: 1px solid #eee;
+      border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
     }
 
-    .image-square {
-      width: 180px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      margin-top: 0.2rem;
+    /* 通用遮罩层 */
+    .block::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.7);  /* 控制遮罩透明度 */
+      z-index: 1;
     }
 
-    .text-content {
-      flex: 1;
+    .block > * {
+      position: relative;
+      z-index: 2;
     }
 
-    .text-content h3 {
+    .block h3 {
       font-size: 1.2rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
       color: #222;
     }
 
-    .text-content p {
+    .block p {
       font-size: 1rem;
       color: #444;
     }
 
-    .text-content a {
+    .block a {
       color: #365C7D;
       text-decoration: none;
     }
 
-    .text-content a:hover {
+    .block a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 900px) {
+    /* 背景图设置 */
+    .bg-phenomenology {
+      background-image: url('phenomenology.jpg');
+    }
+
+    .bg-semantics {
+      background-image: url('semantics.jpg');
+    }
+
+    .bg-illusion {
+      background-image: url('illusion.jpg');
+    }
+
+    @media (max-width: 800px) {
       .container {
-        flex-direction: column;
         padding: 2rem 1rem;
       }
 
-      .sidebar {
-        width: 100%;
-        border-right: none;
-        padding-right: 0;
-        margin-bottom: 2rem;
-      }
-
       .block {
-        flex-direction: column;
-      }
-
-      .image-square {
-        width: 100%;
-        height: auto;
+        padding: 1.5rem;
       }
     }
   </style>
@@ -161,61 +142,44 @@
 
 <body>
 
-  <!-- 顶部 banner -->
+  <!-- 顶部横幅 -->
   <header class="banner">
     <div class="banner-text">Zhiwei Yang | Research</div>
   </header>
 
-  <!-- 回主页按钮 -->
+  <!-- 返回主页按钮 -->
   <div class="back-home">
     <a href="index.html">← Home</a>
   </div>
 
+  <!-- 研究内容容器 -->
   <div class="container">
 
-    <!-- 左侧照片 -->
-    <aside class="sidebar">
-      <img src="IMG_7525.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
-    </aside>
+    <!-- 研究 1 -->
+    <div class="block bg-phenomenology">
+      <h3>“Is Rich Phenomenology Fragmented?”</h3>
+      <p>
+        Published in <em>Synthese</em>, 2025. Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions. Proponents of the Fragment View tend to assert that their view uniquely explains the data they rely on. The uniqueness of the Fragment View is challenged here. Newly introduced evidence suggests that the data supporting the Fragment View may also be compatible with the Rich View. Given the theoretical advantages of the Rich View in other respects, there are reasons to consider it the superior one.
+        <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
+      </p>
+    </div>
 
-    <!-- 右侧研究内容 -->
-    <main class="main">
+    <!-- 研究 2 -->
+    <div class="block bg-semantics">
+      <h3>“Do Semantic Properties Involve the Future?”</h3>
+      <p>
+        This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning,” and then to use that connection to argue against Temporal Externalism (a view that semantic reference can be determined by future facts). In the final part, I argue that TE can only be made plausible by presupposing a kind of meta-belief—which, however, undercuts the very motivation behind externalism.
+      </p>
+    </div>
 
-      <!-- 研究 1 -->
-      <div class="block">
-        <img src="phenomenology.jpg" alt="Phenomenology visual" class="image-square" />
-        <div class="text-content">
-          <h3>“Is Rich Phenomenology Fragmented?”</h3>
-          <p>
-            Published in <em>Synthese</em>, 2025. Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions. Proponents of the Fragment View tend to assert that their view uniquely explains the data they rely on. The uniqueness of the Fragment View is challenged here. Newly introduced evidence suggests that the data supporting the Fragment View may also be compatible with the Rich View. Given the theoretical advantages of the Rich View in other respects, there are reasons to consider it the superior one.
-            <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
-          </p>
-        </div>
-      </div>
+    <!-- 研究 3 -->
+    <div class="block bg-illusion">
+      <h3>“New Object Theory and Illusion”</h3>
+      <p>
+        Defends a novel account of perceptual objecthood that accommodates visual illusions without invoking representational error. The framework draws on relationalist views of perceptual content and metaphysical minimalism.
+      </p>
+    </div>
 
-      <!-- 研究 2 -->
-      <div class="block">
-        <img src="semantics.jpg" alt="Semantics & Time" class="image-square" />
-        <div class="text-content">
-          <h3>“Do Semantic Properties Involve the Future?”</h3>
-          <p>
-            This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning,” and then to use that connection to argue against Temporal Externalism (a view that semantic reference can be determined by future facts). In the final part, I argue that TE can only be made plausible by presupposing a kind of meta-belief—which, however, undercuts the very motivation behind externalism.
-          </p>
-        </div>
-      </div>
-
-      <!-- 研究 3 -->
-      <div class="block">
-        <img src="illusion.jpg" alt="Visual Illusion" class="image-square" />
-        <div class="text-content">
-          <h3>“New Object Theory and Illusion”</h3>
-          <p>
-            Defends a novel account of perceptual objecthood that accommodates visual illusions without invoking representational error. The framework draws on relationalist views of perceptual content and metaphysical minimalism.
-          </p>
-        </div>
-      </div>
-
-    </main>
   </div>
 
 </body>
