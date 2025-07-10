@@ -13,7 +13,6 @@
       line-height: 1.7;
     }
 
-    /* 顶部横幅 */
     .banner {
       height: 200px;
       background-image: url('IMG.jpg');
@@ -43,7 +42,6 @@
       font-family: Georgia, serif;
     }
 
-    /* 固定显示的返回主页链接 */
     .back-home {
       position: fixed;
       top: 1rem;
@@ -65,7 +63,6 @@
       text-decoration: underline;
     }
 
-    /* 主体布局 */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -75,7 +72,6 @@
       gap: 3rem;
     }
 
-    /* 左侧照片栏 */
     .sidebar {
       width: 28%;
       border-right: 1px solid #ddd;
@@ -90,7 +86,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* 右侧研究内容 */
     .main {
       flex: 1;
     }
@@ -98,25 +93,31 @@
     .block {
       position: relative;
       overflow: hidden;
-      background-color: #fff;
-      padding: 2rem;
+      background-color: #ffffff;
+      padding: 2.5rem 2rem;
       margin-bottom: 3rem;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-radius: 14px;
+      border: 1px solid #e2e2e2;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       background-size: cover;
       background-position: center;
       z-index: 0;
     }
 
-    /* 遮罩层 */
+    .block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
     .block::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(255,255,255,0.7);
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
       z-index: 1;
+      backdrop-filter: blur(1px);
     }
 
     .block > * {
@@ -125,28 +126,36 @@
     }
 
     .block h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.6rem;
-      color: #222;
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: #1e1e1e;
+      margin-bottom: 0.8rem;
+      font-family: Georgia, serif;
     }
 
     .block p {
-      font-size: 1rem;
-      color: #444;
+      font-size: 1.03rem;
+      color: #3e3e3e;
+      line-height: 1.8;
+      margin-bottom: 0;
     }
 
     .block a {
-      color: #365C7D;
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: #2f5a85;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s ease;
     }
 
     .block a:hover {
-      text-decoration: underline;
+      border-bottom: 1px solid #2f5a85;
     }
 
-    /* 背景图 */
     .bg-phenomenology {
-      background-image: url('.jpg');
+      background-image: url('phenomenology.jpg');
     }
 
     .bg-semantics {
@@ -171,7 +180,7 @@
       }
 
       .block {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
       }
     }
   </style>
@@ -179,25 +188,20 @@
 
 <body>
 
-  <!-- 顶部横幅 -->
   <header class="banner">
     <div class="banner-text">Zhiwei Yang | Research</div>
   </header>
 
-  <!-- 固定显示的返回主页按钮 -->
   <div class="back-home">
     <a href="index.html">← Home</a>
   </div>
 
-  <!-- 主体内容 -->
   <div class="container">
 
-    <!-- 左栏：你的照片 -->
     <aside class="sidebar">
       <img src="IMG_7525.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
     </aside>
 
-    <!-- 右栏：研究展示块 -->
     <main class="main">
 
       <div class="block bg-phenomenology">
