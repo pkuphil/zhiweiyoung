@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Georgia, serif;
-      background-color: #f7fafd;
+      background-color: #f7fafd; /* 整体背景色 */
       color: #1f1f1f;
       line-height: 1.7;
     }
@@ -43,7 +43,7 @@
       font-family: Georgia, serif;
     }
 
-    /* 固定显示的返回主页链接 */
+    /* 固定的返回主页按钮 */
     .back-home {
       position: fixed;
       top: 1rem;
@@ -75,7 +75,6 @@
       gap: 3rem;
     }
 
-    /* 左侧照片栏 */
     .sidebar {
       width: 28%;
       border-right: 1px solid #ddd;
@@ -90,11 +89,11 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* 右侧研究内容 */
     .main {
       flex: 1;
     }
 
+    /* 研究块公共样式 */
     .block {
       position: relative;
       overflow: hidden;
@@ -104,24 +103,6 @@
       border: 1px solid #eee;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-
-    /* 遮罩层 */
-    .block::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(255,255,255,0.7);
-      z-index: 1;
-    }
-
-    .block > * {
-      position: relative;
-      z-index: 2;
     }
 
     .block h3 {
@@ -144,19 +125,25 @@
       text-decoration: underline;
     }
 
-    /* 背景图 */
+    /* 每个研究主题块的背景色 */
     .bg-phenomenology {
-      background-image: url('.jpg');
+      background-color: #e6f2ff; /* 柔蓝 */
     }
 
     .bg-semantics {
-      background-image: url('semantics.jpg');
+      background-color: #eafaf1; /* 柔绿 */
     }
 
     .bg-illusion {
-      background-image: url('illusion.jpg');
+      background-color: #fdf5f3; /* 柔粉橘 */
     }
 
+    /* 移除遮罩层 */
+    .block::before {
+      display: none;
+    }
+
+    /* 响应式布局 */
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -184,7 +171,7 @@
     <div class="banner-text">Zhiwei Yang | Research</div>
   </header>
 
-  <!-- 固定显示的返回主页按钮 -->
+  <!-- 固定的返回主页按钮 -->
   <div class="back-home">
     <a href="index.html">← Home</a>
   </div>
@@ -192,12 +179,12 @@
   <!-- 主体内容 -->
   <div class="container">
 
-    <!-- 左栏：你的照片 -->
+    <!-- 左栏照片 -->
     <aside class="sidebar">
       <img src="IMG_7525.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
     </aside>
 
-    <!-- 右栏：研究展示块 -->
+    <!-- 右栏研究内容 -->
     <main class="main">
 
       <div class="block bg-phenomenology">
