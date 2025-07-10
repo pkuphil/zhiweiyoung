@@ -108,6 +108,8 @@
       background-size: cover;
       background-position: center;
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
     .mini-block:hover {
@@ -138,12 +140,12 @@
       font-size: 0.95rem;
       color: #444;
       line-height: 1.5;
-      max-height: 4.5em;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      -webkit-line-clamp: 8;
+      flex: 1;
     }
 
     .bg-phenomenology { background-image: url('phenomenology.jpg'); }
@@ -160,6 +162,8 @@
       backdrop-filter: blur(2px);
       justify-content: center;
       align-items: center;
+      overflow: auto;
+      padding: 2rem 1rem;
     }
 
     .modal.active {
@@ -170,7 +174,7 @@
       background-color: #fff;
       padding: 2rem;
       max-width: 700px;
-      width: 90%;
+      width: 100%;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       position: relative;
@@ -239,15 +243,15 @@
       <div class="card-grid">
         <div class="mini-block bg-phenomenology" onclick="openModal('modal1')">
           <h3>“Is Rich Phenomenology Fragmented?”</h3>
-          <p>Some philosophers argue that the content of iconic memory is conscious...</p>
+          <p>Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions...</p>
         </div>
         <div class="mini-block bg-semantics" onclick="openModal('modal2')">
           <h3>“Do Semantic Properties Involve the Future?”</h3>
-          <p>This paper lies at the intersection of philosophy of language...</p>
+          <p>This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning...”</p>
         </div>
         <div class="mini-block bg-illusion" onclick="openModal('modal3')">
           <h3>“New Object Theory and Illusion”</h3>
-          <p>Defends a novel account of perceptual objecthood that ...</p>
+          <p>Defends a novel account of perceptual objecthood that integrates recent debates on the role of attention and object-based representation. The paper argues that illusions are not merely misrepresentations but reveal structural constraints in perceptual object formation...</p>
         </div>
       </div>
     </main>
@@ -257,7 +261,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
       <h3>“Is Rich Phenomenology Fragmented?”</h3>
-      <p>Published in <em>Synthese</em>, 2025... <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a></p>
+      <p>Published in <em>Synthese</em>, 2025. Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions. Proponents of the Fragment View tend to assert that their view uniquely explains the data they rely on. The uniqueness of the Fragment View is challenged here. Newly introduced evidence suggests that the data supporting the Fragment View may also be compatible with the Rich View. Given the theoretical advantages of the Rich View in other respects, there are reasons to consider it the superior one. <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a></p>
     </div>
   </div>
 
@@ -265,7 +269,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
       <h3>“Do Semantic Properties Involve the Future?”</h3>
-      <p>This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind...</p>
+      <p>This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning,” and then to use that connection to argue against Temporal Externalism (a view that semantic reference can be determined by future facts). In the final part, I argue that TE can only be made plausible by presupposing a kind of meta-belief—which, however, undercuts the very motivation behind externalism.</p>
     </div>
   </div>
 
@@ -273,7 +277,7 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal3')">&times;</span>
       <h3>“New Object Theory and Illusion”</h3>
-      <p>Defends a novel account of perceptual objecthood that integrates recent debates on the role of attention and object-based representation...</p>
+      <p>Defends a novel account of perceptual objecthood that integrates recent debates on the role of attention and object-based representation. The paper argues that illusions are not merely misrepresentations but reveal structural constraints in perceptual object formation.</p>
     </div>
   </div>
 
