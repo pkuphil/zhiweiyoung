@@ -8,12 +8,11 @@
     body {
       margin: 0;
       font-family: Georgia, serif;
-      background-color: #f7fafd; /* 整体背景色 */
-      color: #1f1f1f;
+      background-color: #f9f9f9; /* Apple-style 背景 */
+      color: #1d1d1f; /* 苹果正文色 */
       line-height: 1.7;
     }
 
-    /* 顶部横幅 */
     .banner {
       height: 200px;
       background-image: url('IMG.jpg');
@@ -31,33 +30,32 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0,0,0,0.35);
     }
 
     .banner-text {
       position: relative;
       color: white;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 500;
       letter-spacing: 0.5px;
-      font-family: Georgia, serif;
     }
 
-    /* 固定的返回主页按钮 */
     .back-home {
       position: fixed;
       top: 1rem;
       right: 1.5rem;
       z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.85);
       padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(6px);
     }
 
     .back-home a {
       font-size: 0.95rem;
-      color: #365C7D;
+      color: #0071e3;
       text-decoration: none;
     }
 
@@ -65,7 +63,6 @@
       text-decoration: underline;
     }
 
-    /* 主体布局 */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -77,7 +74,7 @@
 
     .sidebar {
       width: 28%;
-      border-right: 1px solid #ddd;
+      border-right: 1px solid #eee;
       padding-right: 1.5rem;
     }
 
@@ -86,38 +83,41 @@
       height: auto;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .main {
       flex: 1;
     }
 
-    /* 研究块公共样式 */
     .block {
-      position: relative;
-      overflow: hidden;
       background-color: #fff;
       padding: 2rem;
       margin-bottom: 3rem;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      border: 1px solid #e0e0e0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .block:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
     }
 
     .block h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 0.6rem;
-      color: #222;
+      color: #1d1d1f;
     }
 
     .block p {
       font-size: 1rem;
-      color: #444;
+      color: #3a3a3a;
     }
 
     .block a {
-      color: #365C7D;
+      color: #0071e3; /* Apple 蓝 */
       text-decoration: none;
     }
 
@@ -125,25 +125,6 @@
       text-decoration: underline;
     }
 
-    /* 每个研究主题块的背景色 */
-    .bg-phenomenology {
-      background-color: #e6f2ff; /* 柔蓝 */
-    }
-
-    .bg-semantics {
-      background-color: #eafaf1; /* 柔绿 */
-    }
-
-    .bg-illusion {
-      background-color: #fdf5f3; /* 柔粉橘 */
-    }
-
-    /* 移除遮罩层 */
-    .block::before {
-      display: none;
-    }
-
-    /* 响应式布局 */
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -166,28 +147,22 @@
 
 <body>
 
-  <!-- 顶部横幅 -->
   <header class="banner">
     <div class="banner-text">Zhiwei Yang | Research</div>
   </header>
 
-  <!-- 固定的返回主页按钮 -->
   <div class="back-home">
     <a href="index.html">← Home</a>
   </div>
 
-  <!-- 主体内容 -->
   <div class="container">
-
-    <!-- 左栏照片 -->
     <aside class="sidebar">
       <img src="IMG_7525.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
     </aside>
 
-    <!-- 右栏研究内容 -->
     <main class="main">
 
-      <div class="block bg-phenomenology">
+      <div class="block">
         <h3>“Is Rich Phenomenology Fragmented?”</h3>
         <p>
           Published in <em>Synthese</em>, 2025. Some philosophers argue that the content of iconic memory is conscious, called the Rich View. However, critics maintain that only fragments of the content of iconic memory are conscious, called the Fragment View. Both sides cite different psychological experimental data to support their positions. Proponents of the Fragment View tend to assert that their view uniquely explains the data they rely on. The uniqueness of the Fragment View is challenged here. Newly introduced evidence suggests that the data supporting the Fragment View may also be compatible with the Rich View. Given the theoretical advantages of the Rich View in other respects, there are reasons to consider it the superior one.
@@ -195,14 +170,14 @@
         </p>
       </div>
 
-      <div class="block bg-semantics">
+      <div class="block">
         <h3>“Do Semantic Properties Involve the Future?”</h3>
         <p>
           This paper lies at the intersection of philosophy of language, epistemology, metaphysics, and even philosophy of mind. Very roughly, its core idea is to examine the connection between “revisions in belief and practice” and “changes in meaning,” and then to use that connection to argue against Temporal Externalism (a view that semantic reference can be determined by future facts). In the final part, I argue that TE can only be made plausible by presupposing a kind of meta-belief—which, however, undercuts the very motivation behind externalism.
         </p>
       </div>
 
-      <div class="block bg-illusion">
+      <div class="block">
         <h3>“New Object Theory and Illusion”</h3>
         <p>
           Defends a novel account of perceptual objecthood that ...
