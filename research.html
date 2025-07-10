@@ -14,33 +14,53 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: row;
       padding: 4rem 1.5rem;
+      gap: 3rem;
+    }
+
+    /* 左边个人照框 */
+    .sidebar {
+      width: 28%;
+      border-right: 1px solid #ddd;
+      padding-right: 1.5rem;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* 右边内容区域 */
+    .main {
+      flex: 1;
     }
 
     .block {
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      gap: 1.5rem;
       background-color: #fff;
       padding: 1.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       border: 1px solid #eee;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .block:nth-child(even) {
-      flex-direction: row-reverse;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-radius: 6px;
     }
 
     .image-square {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 6px;
       flex-shrink: 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .text-content {
@@ -67,35 +87,26 @@
       text-decoration: underline;
     }
 
-    .lecture-photo {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      margin-bottom: 0.5rem;
-    }
-
-    .lecture-caption {
-      font-style: italic;
-      color: #666;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 800px) {
-      .block {
+    @media (max-width: 900px) {
+      .container {
         flex-direction: column;
+        padding: 2rem 1rem;
       }
 
-      .block:nth-child(even) {
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .block {
         flex-direction: column;
       }
 
       .image-square {
         width: 100%;
-        height: 200px;
+        height: auto;
       }
     }
   </style>
@@ -103,49 +114,49 @@
 
 <body>
   <div class="container">
+    <!-- 左侧照片 -->
+    <aside class="sidebar">
+      <img src="WechatIMG826.jpg" alt="Zhiwei Yang portrait" class="profile-photo" />
+    </aside>
 
-    <!-- 论文块 1 -->
-    <div class="block">
-      <img src="phenomenology.jpg" alt="Phenomenology visual" class="image-square" />
-      <div class="text-content">
-        <h3>“Is Rich Phenomenology Fragmented?”</h3>
-        <p>
-          Published in <em>Synthese</em>, 2025. This paper challenges the assumption that richness of experience implies unity. I propose a modular account of consciousness.  
-          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
-        </p>
+    <!-- 右侧研究内容 -->
+    <main class="main">
+
+      <!-- 研究 1 -->
+      <div class="block">
+        <img src="phenomenology.jpg" alt="Phenomenology visual" class="image-square" />
+        <div class="text-content">
+          <h3>“Is Rich Phenomenology Fragmented?”</h3>
+          <p>
+            Published in <em>Synthese</em>, 2025. This paper challenges the assumption that the richness of experience entails unity. I propose a modular account of consciousness grounded in disunified perceptual modalities.  
+            <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read]</a>
+          </p>
+        </div>
       </div>
-    </div>
 
-    <!-- 演讲照片 1 -->
-    <img src="lecture1.jpg" alt="Lecture in Beijing" class="lecture-photo" />
-    <div class="lecture-caption">From my AI & Consciousness talk, Beijing, April 2024.</div>
-
-    <!-- 论文块 2 -->
-    <div class="block">
-      <img src="illusion.jpg" alt="Visual Illusion" class="image-square" />
-      <div class="text-content">
-        <h3>“New Object Theory and Illusion”</h3>
-        <p>
-          Defends a theory of perceptual objecthood that accommodates illusions without invoking representational error. Based on relational views of perception.
-        </p>
+      <!-- 研究 2 -->
+      <div class="block">
+        <img src="illusion.jpg" alt="Visual Illusion" class="image-square" />
+        <div class="text-content">
+          <h3>“New Object Theory and Illusion”</h3>
+          <p>
+            Defends a novel account of perceptual objecthood that accommodates visual illusions without positing representational error. Influenced by relationalist theories of perception.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <!-- 演讲照片 2 -->
-    <img src="lecture2.jpg" alt="Eastern APA Talk" class="lecture-photo" />
-    <div class="lecture-caption">Eastern APA, Colloquium Presentation, Baltimore (Forthcoming).</div>
-
-    <!-- 论文块 3 -->
-    <div class="block">
-      <img src="semantics.jpg" alt="Semantics & Time" class="image-square" />
-      <div class="text-content">
-        <h3>“Do Semantic Properties Involve the Future?”</h3>
-        <p>
-          Investigates whether linguistic meaning depends on future-directed conditions. Implications for semantic anti-realism and temporal metaphysics.
-        </p>
+      <!-- 研究 3 -->
+      <div class="block">
+        <img src="semantics.jpg" alt="Semantics & Time" class="image-square" />
+        <div class="text-content">
+          <h3>“Do Semantic Properties Involve the Future?”</h3>
+          <p>
+            Investigates whether the meaning of linguistic expressions depends on future-directed truth conditions. Discusses implications for semantic anti-realism and temporal metaphysics.
+          </p>
+        </div>
       </div>
-    </div>
 
+    </main>
   </div>
 </body>
 </html>
