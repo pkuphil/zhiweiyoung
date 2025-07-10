@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,140 +8,184 @@
     body {
       margin: 0;
       font-family: Cambria, Georgia, serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f8f8f6;
+      color: #2a2a2a;
     }
 
-    header {
-      background-image: url('IMG.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 4rem 1rem 2rem;
-      text-align: center;
+    .layout {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      gap: 3rem;
+    }
+
+    .sidebar {
+      width: 30%;
+      border-right: 1px solid #ddd;
+      padding-right: 2rem;
+    }
+
+    .content {
+      flex: 1;
+      padding-left: 2rem;
       position: relative;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    header * {
-      position: relative;
-      z-index: 1;
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      float: right;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
+      text-align: center;
+      font-size: 2.4rem;
+      margin-top: 3rem;
     }
 
-    .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 2rem 1rem;
+    .tree-section {
+      margin-bottom: 2rem;
     }
 
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
-      margin-top: 2.5rem;
-      color: #111;
-    }
-
-    .profile-photo {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 20px;
-      display: block;
-      margin: 2rem auto;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    .pub-item {
-      margin-bottom: 1.8rem;
-    }
-
-    .pub-title {
-      font-weight: bold;
+    .tree-title {
       font-size: 1.1rem;
-      color: #2c3e50;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .tree-item {
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+    }
+
+    .tree-item span {
+      display: block;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .tree-item small {
+      color: #888;
+    }
+
+    .detail-block {
+      margin-bottom: 3rem;
+    }
+
+    .detail-block h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .detail-block p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .detail-block a {
+      color: #365C7D;
       text-decoration: none;
     }
 
-    .pub-meta {
-      color: #555;
-      margin-top: 0.2rem;
-      font-size: 0.95rem;
-    }
-
-    .pub-desc {
-      color: #444;
-      margin-top: 0.5rem;
-      line-height: 1.5;
+    .detail-block a:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      color: #999;
-      padding: 2rem 1rem;
       font-size: 0.9rem;
+      color: #aaa;
+      padding: 3rem 1rem;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .content {
+        padding-left: 0;
+      }
+
+      .avatar {
+        float: none;
+        display: block;
+        margin: 0 auto 2rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Research</h1>
-    <p>Work and Writings in Philosophy of Mind and Language</p>
-  </header>
-
-  <img src="WechatIMG826.jpg" alt="Zhiwei Yang" class="profile-photo" />
-
-  <div class="container">
-
-    <section>
-      <h2>Publications</h2>
-
-      <div class="pub-item">
-        <a class="pub-title" href="https://philpapers.org/go.pl?aid=YANIRP" target="_blank">
-          “Is Rich Phenomenology Fragmented?”
-        </a>
-        <div class="pub-meta">Synthese, 2025. 
-          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Springer]</a>
+  <h1>Research</h1>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="tree-section">
+        <div class="tree-title">Published</div>
+        <div class="tree-item">
+          <span>Is Rich Phenomenology Fragmented?</span>
+          <small>Synthese, 2025</small>
         </div>
-        <div class="pub-desc">
-          Argues against the assumption that phenomenal richness entails phenomenal unity. Defends a modular view of perceptual experience, grounded in empirical disunity across modalities.
+      </div>
+
+      <div class="tree-section">
+        <div class="tree-title">Work in Progress</div>
+        <div class="tree-item">
+          <span>New Object Theory and Illusion</span>
+          <small>APA 2026</small>
         </div>
+        <div class="tree-item">
+          <span>Do Semantic Properties Involve the Future?</span>
+          <small>Pacific APA 2025</small>
+        </div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <img src="WechatIMG826.jpg" alt="Portrait" class="avatar" />
+
+      <div class="detail-block">
+        <h2>“Is Rich Phenomenology Fragmented?”</h2>
+        <p>
+          Published in <em>Synthese</em>, 2025. This paper challenges the assumption that the richness of phenomenal experience entails unity. I propose a modular model of perceptual consciousness across modalities.<br/>
+          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Read on Springer]</a>
+        </p>
+      </div>
+
+      <div class="detail-block">
+        <h2>“New Object Theory and Illusion”</h2>
+        <p>
+          This project develops a theory of perceptual objecthood that accommodates visual illusions without positing representational error. The approach draws on relationalism and the transparency of experience.
+        </p>
+      </div>
+
+      <div class="detail-block">
+        <h2>“Do Semantic Properties Involve the Future?”</h2>
+        <p>
+          I explore whether linguistic meaning depends on future-directed conditions. This touches on semantic anti-realism, temporal externalism, and the metaphysics of truth-conditions.
+        </p>
       </div>
 
     </section>
-
-    <section>
-      <h2>Work in Progress</h2>
-
-      <div class="pub-item">
-        <span class="pub-title">“Do Semantic Properties Involve the Future?”</span>
-        <div class="pub-desc">
-          Investigates whether the truth-conditions of natural language expressions require reference to future events. Explores implications for semantic anti-realism and temporal externalism.
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <span class="pub-title">“New Object Theory and Illusion”</span>
-        <div class="pub-desc">
-          Defends a novel theory of perceptual objecthood that accommodates visual illusions without invoking representational error. Draws on relational views of perceptual content.
-        </div>
-      </div>
-
-    </section>
-
   </div>
 
   <footer>
