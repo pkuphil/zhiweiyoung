@@ -4,21 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zhiwei Young</title>
-
-  <!-- Font Awesome 图标库 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-
   <style>
     * {
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: Cambria, Georgia, serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
     header {
       background-image: url('IMG.jpg');
@@ -84,6 +80,21 @@
       text-decoration: underline;
     }
 
+    .lecture-img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      display: block;
+      margin: 1rem auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .lecture-caption {
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
     footer {
       text-align: center;
       color: #999;
@@ -97,159 +108,166 @@
         height: 100px;
       }
     }
-
-    /* About Me 动画背景 */
-    .about-wrapper-fixed {
-      position: relative;
-      padding: 3rem 1.5rem;
-      overflow: hidden;
-    }
-
-    .animated-bg-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      font-size: 12rem;
-      transform: translate(-50%, -50%);
-      color: rgba(47, 79, 110, 0.08);
-      z-index: 0;
-      pointer-events: none;
-      animation: icon-float 5s ease-in-out infinite;
-    }
-
-    .animated-pulse {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(47,79,110,0.15) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      animation: pulse 3s infinite ease-in-out;
-      z-index: 0;
-    }
-
-    .about-text {
-      position: relative;
-      z-index: 2;
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: left;
-      line-height: 1.6;
-    }
-
-    @keyframes pulse {
-      0%   { transform: translate(-50%, -50%) scale(0.95); opacity: 0.4; }
-      50%  { transform: translate(-50%, -50%) scale(1.2); opacity: 0.15; }
-      100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.4; }
-    }
-
-    @keyframes icon-float {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50%      { transform: translate(-50%, -50%) scale(1.05); }
-    }
   </style>
 </head>
 <body>
   <header>
     <img src="WechatIMG826.jpg" alt="Your Photo" class="avatar">
     <h1 style="color: white;">Zhiwei Yang</h1>
-    <p>Graduate Student | Philosophy of Mind | <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: white;">Here is my APA interview</a></p>
+    <p>Graduate Student | Philosophy of Mind | <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: white;">Here is my APA interview</a>
+    </p>
+
+
+<!-- 更大气、圆角、居中的导航按钮 
+  <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <a href="index.html" style="
+      padding: 0.6rem 1.4rem;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: background-color 0.2s ease;
+    ">Home</a>
+    
+    <a href="research.html" style="
+      padding: 0.6rem 1.4rem;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: background-color 0.2s ease;
+    ">Research</a>
+
+    <a href="contact.html" style="
+      padding: 0.6rem 1.4rem;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: background-color 0.2s ease;
+    ">Contact</a>
+  </div>
+    --> 
+
   </header>
+    
 
   <div style="text-align: center; margin-top: 2rem; margin-bottom: 0.2rem; font-weight: bold; font-size: 1.05rem; color: #222;">
-    Forthcoming Talk
+  Forthcoming Talk
+</div>
+
+<div style="text-align: center; background-color: #f5f5f5; color: #444; font-style: italic; font-size: 1rem; padding: 0.6rem 1rem; margin: 0.4rem auto 1rem; border-left: 4px solid #888; max-width: 700px;">
+  <span style="color: #666;">Jan. 2026, Baltimore:</span> “New Object Theory and Illusion”, Eastern APA, Colloquium
+</div>
+
+<div class="container">
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy at Peking University and currently a visiting student at MIT. I mostly write about philosophy of mind and philosophy of perception.<br><br>
+      I’m advised by 
+      <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> 
+      at Peking University and, during my visit at MIT, by 
+      <a href="http://www.alexbyrne.org" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
+      I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies.<br>
+      I'm also a fan of the band 
+      <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Twenty One Pilots</a>
+      and Hong Kong singer 
+      <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Sam Hui</a>.
+    </p>
+  </section>
+
+    <!-- 
+    <section>
+      <h2>Lecture Snapshot</h2>
+      <img src="lecture-photo.jpg" alt="Lecture Photo" class="lecture-img" />
+      <p class="lecture-caption">
+        From my recent lecture on AI and the nature of perception.
+      </p>
+    </section>
+    -->
+
+
+   <section>
+  <h2>Papers</h2>
+  <div style="text-align: right; margin-top: -1.2rem; margin-bottom: 1.5rem;">
+    <a href="research.html" style="
+      font-size: 0.92rem;
+      color: #444;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2px;
+      transition: all 0.2s ease;
+    " onmouseover="this.style.color='#222'; this.style.borderBottomColor='#888'"
+       onmouseout="this.style.color='#444'; this.style.borderBottomColor='#ccc'">
+      View Full Research →
+    </a>
   </div>
+  <ul style="list-style: none; padding-left: 0;">
+    <li style="margin-bottom: 1rem;">
+      <span style="color: #555;">2025.</span>
+      <a href="https://philpapers.org/go.pl?aid=YANIRP" style="font-weight: bold; color: #365C7D; text-decoration: none;">
+        “Is Rich Phenomenology Fragmented?”
+      </a>
+      <span style="color: #555;"> Synthese.</span>
+      <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" style="color: #365C7D; text-decoration: none;">
+        [Springer]
+      </a>
+    </li>
+  </ul>
+</section>
 
-  <div style="text-align: center; background-color: #f5f5f5; color: #444; font-style: italic; font-size: 1rem; padding: 0.6rem 1rem; margin: 0.4rem auto 1rem; border-left: 4px solid #888; max-width: 700px;">
-    <span style="color: #666;">Jan. 2026, Baltimore:</span> “New Object Theory and Illusion”, Eastern APA, Colloquium
-  </div>
-
-  <div class="container">
-
-    <!-- ✅ About Me Section -->
+    <!--
     <section>
-      <h2>About Me</h2>
-      <div class="about-wrapper-fixed">
-        <div class="animated-pulse"></div>
-        <i class="fas fa-brain animated-bg-icon"></i>
+  <h2>Work in Progress</h2>
+  <ul style="list-style: none; padding-left: 0;">
+    <li style="margin-bottom: 1rem;">“Do Semantic Properties Involve the Future?”</li>
+    <li style="margin-bottom: 1rem;">“New Object Theory and Illusion”</li>
+  </ul>
+</section>
+  -->
 
-        <div class="about-text">
-          <p>
-            Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy at Peking University and currently a visiting student at MIT. I mostly write about philosophy of mind and philosophy of perception.<br><br>
-            I’m advised by 
-            <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> 
-            at Peking University and, during my visit at MIT, by 
-            <a href="http://www.alexbyrne.org" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
-            I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of 
-            <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311" target="_blank" style="color: #2f4f6e;">Twenty One Pilots</a> 
-            and 
-            <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722" target="_blank" style="color: #2f4f6e;">Sam Hui</a>.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- ✅ Papers section -->
     <section>
-      <h2>Papers</h2>
-      <div style="text-align: right; margin-top: -1.2rem; margin-bottom: 1.5rem;">
-        <a href="research.html" style="
-          font-size: 0.92rem;
-          color: #444;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          text-decoration: none;
-          border-bottom: 1px solid #ccc;
-          padding-bottom: 2px;
-          transition: all 0.2s ease;
-        " onmouseover="this.style.color='#222'; this.style.borderBottomColor='#888'"
-           onmouseout="this.style.color='#444'; this.style.borderBottomColor='#ccc'">
-          View Full Research →
-        </a>
-      </div>
-      <ul style="list-style: none; padding-left: 0;">
-        <li style="margin-bottom: 1rem;">
-          <span style="color: #555;">2025.</span>
-          <a href="https://philpapers.org/go.pl?aid=YANIRP" style="font-weight: bold; color: #365C7D; text-decoration: none;">
-            “Is Rich Phenomenology Fragmented?”
-          </a>
-          <span style="color: #555;"> Synthese.</span>
-          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" style="color: #365C7D; text-decoration: none;">
-            [Springer]
-          </a>
-        </li>
-      </ul>
-    </section>
+  <h2>Talks</h2>
 
-    <!-- ✅ Talks section -->
-    <section>
-      <h2>Talks</h2>
-      <ul style="list-style: none; padding-left: 0;">
-        <li style="margin-bottom: 1.2rem;">
-          <strong>“New Object Theory and Illusion”</strong><br/>
-          <span style="color: #555;">• Eastern APA, Colloquium, <em>Baltimore, USA</em>, <em>Forthcoming</em> (January 2026)</span>
-        </li>
-        <li style="margin-bottom: 1.2rem;">
-          <strong>“Do Semantic Properties Involve the Future?”</strong><br/>
-          <span style="color: #555;">• Pacific APA, Colloquium, <em>San Francisco, USA</em>, <em>April 2025</em></span><br/>
-          <span style="color: #555;">• Eastern APA, W.I.P., <em>New York, USA</em>, <em>January 2025</em></span>
-        </li>
-        <li style="margin-bottom: 1.2rem;">
-          <strong>“Is Rich Phenomenology Fragmented?”</strong><br/>
-          <span style="color: #555;">• Central APA, Colloquium, <em>Online</em>, <em>February 2025</em></span>
-        </li>
-        <li style="margin-bottom: 1.2rem;">
-          <strong>“Methodological Challenges in Consciousness Concept Research”</strong><br/>
-          <span style="color: #555;">• AAP Conference, <em>Perth, Australia</em>, <em>July 2024</em></span><br/>
-          <span style="color: #555;">• Workshop in Science & Philosophy, <em>Beijing</em>, <em>April 2024</em></span><br/>
-          <span style="color: #555;">• PKU R&W, <em>Beijing</em>, <em>March 2024</em></span>
-        </li>
-      </ul>
-    </section>
+  <ul style="list-style: none; padding-left: 0;">
+    
+    <li style="margin-bottom: 1.2rem;">
+      <strong>“New Object Theory and Illusion”</strong><br/>
+      <span style="color: #555;">• Eastern APA, Colloquium, <em>Baltimore, USA</em>, <em>Forthcoming</em> (January 2026)</span>
+    </li>
 
-    <!-- ✅ Contact section -->
+    <li style="margin-bottom: 1.2rem;">
+      <strong>“Do Semantic Properties Involve the Future?”</strong><br/>
+      <span style="color: #555;">• Pacific APA, Colloquium, <em>San Francisco, USA</em>, <em>April 2025</em></span><br/>
+      <span style="color: #555;">• Eastern APA, W.I.P., <em>New York, USA</em>, <em>January 2025</em></span>
+    </li>
+
+    <li style="margin-bottom: 1.2rem;">
+      <strong>“Is Rich Phenomenology Fragmented?”</strong><br/>
+      <span style="color: #555;">• Central APA, Colloquium, <em>Online</em>, <em>February 2025</em></span>
+    </li>
+
+    <li style="margin-bottom: 1.2rem;">
+      <strong>“Methodological Challenges in Consciousness Concept Research”</strong><br/>
+      <span style="color: #555;">• Annual Conference of the Australasian Association of Philosophy, Colloquium, <em>Perth, Australia</em>, <em>July 2024</em></span><br/>
+      <span style="color: #555;">• Workshop for Young Scholars in Science and Philosophy, Colloquium, <em>Beijing, China</em>, <em>April 2024</em></span><br/>
+      <span style="color: #555;">• PKU Philosophy R&amp;W, <em>Beijing, China</em>, <em>March 2024</em></span>
+    </li>
+
+  </ul>
+</section>
+
+
     <section>
       <h2>Contact</h2>
       <p>Email: allenminesky AT gmail DOT com</p>
@@ -257,7 +275,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Zhiwei Yang. All rights reserved.
+    &copy; 2025 Your Name. All rights reserved.
   </footer>
 </body>
 </html>
