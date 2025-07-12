@@ -98,58 +98,58 @@
       }
     }
 
-    /* ---------- About Me 动画背景样式 ---------- */
-    .about-wrapper {
+    /* About Me 动画背景 */
+    .about-wrapper-fixed {
       position: relative;
-      padding: 5rem 2rem 4rem;
+      padding: 3rem 1.5rem;
       overflow: hidden;
-      text-align: center;
+      background-color: #fdfdfd;
+      border-radius: 10px;
     }
 
     .animated-bg-icon {
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 16rem;
+      font-size: 12rem;
       transform: translate(-50%, -50%);
-      color: rgba(47, 79, 110, 0.07);
-      filter: blur(1px);
-      animation: subtle-bounce 6s ease-in-out infinite;
+      color: rgba(47, 79, 110, 0.08);
       z-index: 0;
       pointer-events: none;
+      animation: icon-float 5s ease-in-out infinite;
     }
 
     .animated-pulse {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 300px;
-      height: 300px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(47,79,110,0.15) 0%, transparent 70%);
       transform: translate(-50%, -50%);
-      animation: pulse 3.5s infinite ease-in-out;
+      animation: pulse 3s infinite ease-in-out;
       z-index: 0;
-      filter: blur(2px);
-    }
-
-    @keyframes pulse {
-      0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; }
-      50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.15; }
-      100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; }
-    }
-
-    @keyframes subtle-bounce {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.04); }
     }
 
     .about-text {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 720px;
       margin: 0 auto;
       text-align: left;
+      line-height: 1.6;
+    }
+
+    @keyframes pulse {
+      0%   { transform: translate(-50%, -50%) scale(0.95); opacity: 0.4; }
+      50%  { transform: translate(-50%, -50%) scale(1.2); opacity: 0.15; }
+      100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.4; }
+    }
+
+    @keyframes icon-float {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50%      { transform: translate(-50%, -50%) scale(1.05); }
     }
   </style>
 </head>
@@ -170,10 +170,10 @@
 
   <div class="container">
 
-    <!-- ⭐️ 新版 About Me 部分 -->
+    <!-- 🧠 About Me Section with Animated Background -->
     <section>
       <h2>About Me</h2>
-      <div class="about-wrapper">
+      <div class="about-wrapper-fixed">
         <div class="animated-pulse"></div>
         <i class="fas fa-brain animated-bg-icon"></i>
 
