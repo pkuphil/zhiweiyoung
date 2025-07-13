@@ -19,6 +19,7 @@
     .main-layout {
       display: flex;
       min-height: 100vh;
+      flex-direction: row;
     }
 
     .left-photo {
@@ -68,6 +69,15 @@
       z-index: 1;
     }
 
+    header a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    header a:hover {
+      color: #ddd;
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
@@ -96,21 +106,6 @@
 
     a:hover {
       text-decoration: underline;
-    }
-
-    .lecture-img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 10px;
-      display: block;
-      margin: 1rem auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .lecture-caption {
-      text-align: center;
-      color: #555;
-      font-size: 0.95rem;
     }
 
     footer {
@@ -153,7 +148,7 @@
         <h1>Zhiwei Yang</h1>
         <p>
           Graduate Student | Philosophy of Mind |
-          <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" target="_blank" rel="noopener noreferrer" style="color: white;">APA Interview</a>
+          <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" target="_blank" rel="noopener noreferrer">APA Interview</a>
         </p>
       </header>
 
