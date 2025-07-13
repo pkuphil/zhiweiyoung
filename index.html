@@ -6,63 +6,31 @@
   <title>Zhiwei Yang</title>
   <style>
     * {
-      box-sizing: border-box; 
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: Georgia, Cambria, serif;
-      background-color: #fafafa;
-      color: #1f1f1f;
-      line-height: 1.7;
-    }
-
-    .main-layout {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: row;
-    }
-
-    .left-photo {
-      width: 360px;
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-
-    .profile-img {
-      width: 100%;
-      height: auto;
-      border-radius: 0;
-      object-fit: contain;
-      box-shadow: none;
-      border: none;
-      max-height: 90vh;
-    }
-
-    .right-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      font-family: 'Georgia', serif;
+      background-color: #fdfcf9;
+      color: #2a2a2a;
+      line-height: 1.8;
     }
 
     header {
-      background-image: url('IMG.jpg');
+      background: url('IMG.jpg') no-repeat center center;
       background-size: cover;
-      background-position: center;
-      padding: 2.8rem 1.5rem;
+      position: relative;
+      padding: 4rem 2rem;
       text-align: center;
       color: white;
-      position: relative;
     }
 
     header::after {
       content: "";
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
@@ -71,8 +39,19 @@
       z-index: 1;
     }
 
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
+    }
+
     header a {
-      color: white;
+      color: #fff;
       text-decoration: underline;
     }
 
@@ -81,155 +60,113 @@
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 2rem;
-    }
-
-    h1, h2 {
-      color: #1f1f1f;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
     }
 
     h2 {
-      border-bottom: 2px solid #ddd;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #ccc;
+      margin-top: 3rem;
       padding-bottom: 0.3rem;
-      margin-top: 2.2rem;
+      color: #1a1a1a;
+    }
+
+    p, li {
+      color: #444;
+      font-size: 1.05rem;
     }
 
     ul {
+      padding-left: 1.2rem;
       list-style: disc;
-      padding-left: 1.5rem;
     }
 
-    a {
-      color: #365C7D;
-      text-decoration: none;
+    .highlight-box {
+      background-color: #f3f3f3;
+      border-left: 4px solid #666;
+      padding: 0.8rem 1rem;
+      margin: 1.2rem 0;
+      font-style: italic;
+      color: #555;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    p, li, span {
-      color: #444;
-    }
-
-    footer {
+    .footer {
       text-align: center;
-      color: #999;
       padding: 2rem 1rem;
       font-size: 0.9rem;
+      color: #999;
+      border-top: 1px solid #eee;
+      margin-top: 4rem;
     }
 
-    @media (max-width: 800px) {
-      .main-layout {
-        flex-direction: column;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
       }
 
-      .left-photo {
-        width: 100%;
-        padding: 1.5rem;
-      }
-
-      .right-content {
-        width: 100%;
-      }
-
-      .profile-img {
-        width: 100%;
-        height: auto;
-        max-height: none;
+      .container {
+        padding: 2rem 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="main-layout">
-    <aside class="left-photo">
-      <img src="IMG_7525.jpg" alt="Zhiwei Yang" class="profile-img">
-    </aside>
 
-    <div class="right-content">
-      <header>
-        <h1><a href="#">Zhiwei Yang</a></h1>
-        <p>
-          <a href="#">Graduate Student</a> |
-          <a href="#">Philosophy of Mind</a> |
-          <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" target="_blank" rel="noopener noreferrer">APA Interview</a>
-        </p>
-      </header>
+  <header>
+    <h1>Zhiwei Yang</h1>
+    <p>
+      <a href="#">Graduate Student</a> | 
+      <a href="#">Philosophy of Mind</a> | 
+      <a href="https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/" target="_blank">APA Interview</a>
+    </p>
+  </header>
 
-      <div class="container">
-        <div style="text-align: center; margin-top: 2rem; font-weight: bold; font-size: 1.05rem;">
-          Forthcoming Talk
-        </div>
-        <div style="text-align: center; background-color: #f5f5f5; color: #444; font-style: italic; font-size: 1rem; padding: 0.6rem 1rem; margin: 0.4rem auto 1.5rem; border-left: 4px solid #888; max-width: 700px;">
-          <span style="color: #666;">Jan. 2026, Baltimore:</span> “New Object Theory and Illusion”, Eastern APA, Colloquium
-        </div>
-
-        <section>
-          <h2>About Me</h2>
-          <p>
-            Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy at Peking University and currently a visiting student at MIT. I mostly write about philosophy of mind and philosophy of perception.<br><br>
-            I’m advised by
-            <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" target="_blank">Qilin Li</a>
-            at Peking University and, during my visit at MIT, by
-            <a href="http://www.alexbyrne.org" target="_blank">Alex Byrne</a>.<br><br>
-            I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies.<br>
-            I'm also a fan of
-            <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" target="_blank">Twenty One Pilots</a>
-            and
-            <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" target="_blank">Sam Hui</a>.
-          </p>
-        </section>
-
-        <section>
-          <h2>Papers</h2>
-          <ul style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 1rem;">
-              <span>2025.</span>
-              <a href="https://philpapers.org/go.pl?aid=YANIRP" style="font-weight: bold;">“Is Rich Phenomenology Fragmented?”</a>
-              <span> Synthese.</span>
-              <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8"> [Springer]</a>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Talks</h2>
-          <ul style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 1.2rem;">
-              <strong>“New Object Theory and Illusion”</strong><br/>
-              <span>• Eastern APA, Colloquium, <em>Baltimore, USA</em>, <em>Forthcoming</em> (January 2026)</span>
-            </li>
-            <li style="margin-bottom: 1.2rem;">
-              <strong>“Do Semantic Properties Involve the Future?”</strong><br/>
-              <span>• Pacific APA, Colloquium, <em>San Francisco, USA</em>, <em>April 2025</em></span><br/>
-              <span>• Eastern APA, W.I.P., <em>New York, USA</em>, <em>January 2025</em></span>
-            </li>
-            <li style="margin-bottom: 1.2rem;">
-              <strong>“Is Rich Phenomenology Fragmented?”</strong><br/>
-              <span>• Central APA, Colloquium, <em>Online</em>, <em>February 2025</em></span>
-            </li>
-            <li style="margin-bottom: 1.2rem;">
-              <strong>“Methodological Challenges in Consciousness Concept Research”</strong><br/>
-              <span>• AAP Conference, <em>Perth, Australia</em>, <em>July 2024</em></span><br/>
-              <span>• Young Scholars Workshop, <em>Beijing, China</em>, <em>April 2024</em></span><br/>
-              <span>• PKU Philosophy R&amp;W, <em>Beijing</em>, <em>March 2024</em></span>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Contact</h2>
-          <p>Email: allenminesky AT gmail DOT com</p>
-        </section>
-      </div>
-
-      <footer>
-        &copy; 2025 Zhiwei Yang. All rights reserved.
-      </footer>
+  <main class="container">
+    <div class="highlight-box">
+      Jan. 2026, Baltimore: “New Object Theory and Illusion”, Eastern APA, Colloquium
     </div>
-  </div>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hi! I’m Zhiwei, a third-year PhD student in the Department of Philosophy at Peking University, currently visiting MIT. My work focuses on philosophy of mind and perception.<br><br>
+        I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" target="_blank">Qilin Li</a> (PKU) and <a href="http://www.alexbyrne.org" target="_blank">Alex Byrne</a> (MIT). I love cooking, aimless wandering, cycling, narrative cinema, and personal biographies.<br>
+        Music: <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" target="_blank">Twenty One Pilots</a>, <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" target="_blank">Sam Hui</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Papers</h2>
+      <ul>
+        <li>
+          <strong>“Is Rich Phenomenology Fragmented?”</strong> (2025). <em>Synthese</em>. 
+          <a href="https://philpapers.org/go.pl?aid=YANIRP" target="_blank">[PhilPapers]</a> 
+          <a href="https://link.springer.com/article/10.1007/s11229-025-05058-8" target="_blank">[Springer]</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Talks</h2>
+      <ul>
+        <li><strong>“New Object Theory and Illusion”</strong> – Eastern APA, Baltimore, Jan. 2026</li>
+        <li><strong>“Do Semantic Properties Involve the Future?”</strong> – Pacific APA, SF (Apr. 2025); Eastern APA WIP, NYC (Jan. 2025)</li>
+        <li><strong>“Is Rich Phenomenology Fragmented?”</strong> – Central APA, Online (Feb. 2025)</li>
+        <li><strong>“Methodological Challenges in Consciousness Concept Research”</strong> – AAP (Jul. 2024); Young Scholars Workshop (Apr. 2024); PKU R&W (Mar. 2024)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: allenminesky AT gmail DOT com</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Zhiwei Yang. All rights reserved.
+  </footer>
+
 </body>
 </html>
